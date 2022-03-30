@@ -1,0 +1,76 @@
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+/*
+function Helloword(props){
+  return(
+    <div id="hello">{props.mytext}</div>
+  );
+}
+*/
+
+/*
+const App = () => <div>Component: <Helloword/></div>
+*/
+
+/*
+"props" return an object then we use props.element,
+for this case props.mytext
+*/
+
+/*
+state
+Definition: props object´s default inner data
+
+{} let execute js code
+*/
+
+
+class Helloword extends React.Component{
+  state = {
+    show: true
+  }
+
+
+/*
+  toggleShow() {
+    this.setState({show: false});
+  }
+  //require in onClick{this.toggleShow.bind(this)}
+*/
+
+  toggleShow = () => {
+    this.setState({show: !this.state.show});
+    //!this.state.show change between false and true
+  }
+
+  render(){
+    if (this.state.show) {
+      return(
+        <div id="hello">{this.props.mytext}
+          <button onClick={this.toggleShow}>Toggle Show</button>
+        </div>
+
+      );
+    } else {
+      return(
+        <h2>No elements
+          <button onClick={this.toggleShow}>Toggle Show</button>
+        </h2>
+      );
+    }
+  }
+}
+
+
+
+function App() {
+  return(
+    <div>Component: <Helloword mytext="Hello ADOB"/> </div>
+  );
+}
+
+
+export default App;
