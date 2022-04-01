@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+//Bootstrap Style
+import './bootstrap/v5.1.3/css/bootstrap.css';
+import './bootstrap/v5.1.3/css/bootstrap-utilities.css';
+import './bootstrap/v5.1.3/css/bootstrap-grid.css';
+import './bootstrap/v5.1.3/css/bootstrap-reboot.css';
+
 class Task extends Component {
 
 	StyleCompleted(){
@@ -13,10 +19,17 @@ class Task extends Component {
 
 	render(){
 		return (
-			<div style={this.StyleCompleted()}>
-				{this.props.task.title} - {this.props.task.done}
-		  		<input type="checkbox"/>
-	  			<button style={btnDelete}>x</button>
+			<div className="p-5 my-5 border">
+				<div style={this.StyleCompleted()} className="row mb-3 mt-3 bg-light">
+					<p className="h6">{this.props.task.title}</p>
+					<p>{this.props.task.description}</p>
+				</div>
+				<div className="col-sm">
+					<button className="btn rounded-3">
+						<input className="form-check-input" type="checkbox"/>
+					</button>
+					<button className="btn btn-danger rounded-3">x</button>
+				</div>
 			</div>
 	  	);
 	}
@@ -27,7 +40,7 @@ Task.propTypes = {
 }
 
 //Inner style
-const btnDelete = {
+/*const btnDelete = {
 	fontSize: "18px",
 	background: "#ea2027",
 	color: "#fff",
@@ -36,5 +49,5 @@ const btnDelete = {
 	borderRadius: "50%",
 	cursor: "pointer"
 }
-
+*/
 export default Task;
