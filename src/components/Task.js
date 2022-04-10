@@ -1,3 +1,7 @@
+/*
+This component show each for each task allowed
+*/
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -18,17 +22,19 @@ class Task extends Component {
 	}
 
 	render(){
+
+		const {task} = this.props;
 		return (
 			<div className="p-5 my-5 border">
 				<div style={this.StyleCompleted()} className="row mb-3 mt-3 bg-light">
-					<p className="h6">{this.props.task.title}</p>
+					<p className="h6">{task.title} ({task.id})</p>
 					<p>{this.props.task.description}</p>
 				</div>
 				<div className="col-sm">
 					<button className="btn rounded-3">
-						<input className="form-check-input" type="checkbox"/>
+						<input className="form-check-input" type="checkbox" onChange={this.props.checkDone.bind(this, task.id)}/>
 					</button>
-					<button className="btn btn-danger rounded-3">x</button>
+					<button className="btn btn-danger rounded-3" onClick={this.props.deleteTask.bind(this, task.id)}>x</button>
 				</div>
 			</div>
 	  	);

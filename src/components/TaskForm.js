@@ -1,3 +1,7 @@
+/*
+This component receive form-data
+*/
+
 import React, { Component } from 'react';
 
 //Bootstrap Style
