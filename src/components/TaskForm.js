@@ -5,10 +5,12 @@ This component receive form-data
 import React, { Component } from 'react';
 
 //Bootstrap Style
-import './bootstrap/v5.1.3/css/bootstrap.css';
-import './bootstrap/v5.1.3/css/bootstrap-utilities.css';
-import './bootstrap/v5.1.3/css/bootstrap-grid.css';
-import './bootstrap/v5.1.3/css/bootstrap-reboot.css';
+import './bootstrap/reactjs/css/bootstrap.css';
+import './bootstrap/reactjs/css/bootstrap-utilities.css';
+import './bootstrap/reactjs/css/bootstrap-grid.css';
+import './bootstrap/reactjs/css/bootstrap-reboot.css';
+import './bootstrap/reactjs/css/bootstrap-icons.css';
+import './bootstrap/reactjs/css/bootstrap-glyphicons.css';
 
 
 export default class TaskForm extends Component {
@@ -32,8 +34,8 @@ export default class TaskForm extends Component {
 		return (
 
 			<form onSubmit={this.onSubmit}>
-				<div className="container p-5 my-5 border">
-					<div className="well h6">New Task</div>
+				<div className="container p-5 my-5 bg-dark rounded">
+					<div className="well h6 text-white">New Task</div>
 					<div className="form-floating mb-3 mt-3">
 						<input 
 							type="text" 
@@ -56,15 +58,17 @@ export default class TaskForm extends Component {
 						</textarea>
 						<label htmlFor="descript-t1">Description</label>
 					</div>
-					<div className="form-check mb-3">
-						<label className="form-check-label">
-							<input 
-								className="form-check-input" 
-								type="checkbox" 
-								name="remember-inp1"/>Remember
-						</label>
+					<div className='btn-group-xs'>
+						<button className="btn" type='button'>
+							<label className="form-check-label text-white">
+								<input 
+									className="form-check-input" 
+									type="checkbox" 
+									name="remember-inp1"/>Remember
+							</label>
+						</button>
+						<button className="btn btn-primary" type="submit">Ok</button>
 					</div>
-					<button className="btn btn-primary" type="submit">Ok</button>
 				</div>
 			</form>
 

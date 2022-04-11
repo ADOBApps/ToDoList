@@ -8,6 +8,7 @@ import './App.css';
 import tasks from './sample/task.json';
 import Tasks from './components/Tasks';
 import TaskForm from './components/TaskForm';
+import Posts from './components/Posts';
 
 console.log(tasks);
 
@@ -51,9 +52,12 @@ class App extends Component {
 
   render(){
 		return(
-	 	 <div>
-		  	<TaskForm addTask={this.addTask}/>
-		  	<Tasks tasks={this.state.tasks} deleteTask={this.deleteTask} checkDone={this.checkDone}/>
+	 	 <div className='container-fluid p-5 my-5 border'>
+			<TaskForm addTask={this.addTask}/>
+			<Tasks
+				tasks={this.state.tasks}
+				deleteTask={this.deleteTask}
+			  	checkDone={this.checkDone}/>	
 		  </div>
 		);
   }

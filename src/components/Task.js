@@ -6,10 +6,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 //Bootstrap Style
-import './bootstrap/v5.1.3/css/bootstrap.css';
-import './bootstrap/v5.1.3/css/bootstrap-utilities.css';
-import './bootstrap/v5.1.3/css/bootstrap-grid.css';
-import './bootstrap/v5.1.3/css/bootstrap-reboot.css';
+import './bootstrap/reactjs/css/bootstrap.css';
+import './bootstrap/reactjs/css/bootstrap-utilities.css';
+import './bootstrap/reactjs/css/bootstrap-grid.css';
+import './bootstrap/reactjs/css/bootstrap-reboot.css';
+import './bootstrap/reactjs/css/bootstrap-icons.css';
+import './bootstrap/reactjs/css/bootstrap-glyphicons.css';
 
 class Task extends Component {
 
@@ -25,16 +27,18 @@ class Task extends Component {
 
 		const {task} = this.props;
 		return (
-			<div className="p-5 my-5 border">
-				<div style={this.StyleCompleted()} className="row mb-3 mt-3 bg-light">
+			<div className="container p-5 my-5 border bg-primary text-white rounded">
+				<div style={this.StyleCompleted()} className="row mb-3 mt-3 bg-light rounded">
 					<p className="h6">{task.title} ({task.id})</p>
-					<p>{this.props.task.description}</p>
+					<p className='well'>{this.props.task.description}</p>
 				</div>
 				<div className="col-sm">
-					<button className="btn rounded-3">
-						<input className="form-check-input" type="checkbox" onChange={this.props.checkDone.bind(this, task.id)}/>
+					<button className="btn rounded-3"onClick={this.props.checkDone.bind(this, task.id)}>
+						<span className={this.props.task.done ? "bi-check2-square" : "bi-square"}></span>
 					</button>
-					<button className="btn btn-danger rounded-3" onClick={this.props.deleteTask.bind(this, task.id)}>x</button>
+					<button className="btn rounded-3" onClick={this.props.deleteTask.bind(this, task.id)}>
+						<span className='bi-x-circle-fill'></span>
+					</button>
 				</div>
 			</div>
 	  	);
