@@ -49,15 +49,5 @@ Task.propTypes = {
 	task: PropTypes.object.isRequired
 }
 
-//Inner style
-/*const btnDelete = {
-	fontSize: "18px",
-	background: "#ea2027",
-	color: "#fff",
-	border: "none",
-	padding: "8px 11px",
-	borderRadius: "50%",
-	cursor: "pointer"
-}
-*/
+
 export default Task;

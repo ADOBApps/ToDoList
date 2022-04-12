@@ -11,19 +11,12 @@ import '../css/custom.css'
 
 export default class HeaderTemp extends Component{
 
-    headerStyle(){
-        return{
-            backgroundImage: url((this.props.headerImgRUL))
-        }
-    }
-
     render(){
-        const {header} = this.props;
         return(
-            <header id='header' style={headerStyle()}>
+            <header id='header'>
 		        <div className='header-content'>
 			        <div className='header-content-inner'>
-				        <div className='h4'>{header.headerText}</div>
+				        <div className='h4'>{this.props.headerText}</div>
 			        </div>
 		        </div>
 	        </header>
