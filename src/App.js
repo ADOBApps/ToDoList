@@ -1,17 +1,41 @@
 /**
- * 
+ * @author Acxel Orozco <acxelorozco@gmail.com>
+ * @description Main script app, this build pages calling module components
  */
 import React, { Component } from 'react';
 
 import './App.css';
 
-
-//Components
+/**
+ * @description JSON object contains main activities
+*/
 import tasks from './sample/task.json';
+
+/**
+ * @description React's built-in components
+*/
 import Tasks from './components/Tasks';
 import TaskForm from './components/TaskForm';
-import Posts from './components/Posts';
+
+/**
+ * @description Boostrap's Component
+ * @param headerText
+*/
 import HeaderTemp from './components/bootstrap/reactjs/rjs/HeaderTemp'
+/**
+ * @description Boostrap's Component
+ * @param footTitle
+ * @param footEmail
+ * @param footYear
+*/
+import FootTemp from './components/bootstrap/reactjs/rjs/FootTemp'
+
+/**
+ * @description Special module which gets json by https conection
+*/
+// eslint-disable-next-line
+import Posts from './components/Posts';
+
 
 console.log(tasks);
 
@@ -54,15 +78,20 @@ class App extends Component {
   	}
 
 	render(){
+		const myDate = new Date();
 		return(
-	 	 <div className='container-fluid'>
+		<div className='container-fluid'>
 			<HeaderTemp headerText={"Todo list"}/>
 			<TaskForm addTask={this.addTask}/>
 			<Tasks
 				tasks={this.state.tasks}
 				deleteTask={this.deleteTask}
-			  	checkDone={this.checkDone}/>	
-		  </div>
+			  	checkDone={this.checkDone}/>
+			<FootTemp 
+				footTitle={"Contact us"}
+				footEmail={"acxelorozco@gmail.com"}
+				footYear={myDate.getFullYear()}/>	
+		</div>
 		);
 	}
 }

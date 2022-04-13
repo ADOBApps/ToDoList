@@ -26,13 +26,12 @@ class Task extends Component {
 	render(){
 
 		const {task} = this.props;
+
 		return (
-			<div className="container p-5 my-5 border bg-primary text-white rounded">
-				<div style={this.StyleCompleted()} className="row mb-3 mt-3 bg-light rounded">
-					<p className="h6">{task.title} ({task.id})</p>
-					<p className='well'>{this.props.task.description}</p>
-				</div>
-				<div className="col-sm">
+			<div className="container p-5 my-5 border bg-secundary text-white rounded">
+				<div style={this.StyleCompleted()} className="row bg-light rounded">
+				
+				<div className="col-sm d-flex flex-row-reverse">
 					<button className="btn rounded-3"onClick={this.props.checkDone.bind(this, task.id)}>
 						<span className={this.props.task.done ? "bi-check2-square" : "bi-square"}></span>
 					</button>
@@ -40,6 +39,14 @@ class Task extends Component {
 						<span className='bi-x-circle-fill'></span>
 					</button>
 				</div>
+
+					<p className="h6 text-center">{task.title} ({task.id})</p>
+					<div className='row'>
+						<div className='col-sm-12'><hr/></div>
+					</div>
+					<p className='well lead'>{this.props.task.description}</p>
+				</div>
+				
 			</div>
 	  	);
 	}

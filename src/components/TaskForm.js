@@ -58,6 +58,7 @@ export default class TaskForm extends Component {
 						</textarea>
 						<label htmlFor="descript-t1">Description</label>
 					</div>
+					<div className='row'><div className='col-sm-12 text-white'><hr/></div></div>
 					<div className='btn-group-xs'>
 						<button className="btn" type='button'>
 							<label className="form-check-label text-white">
